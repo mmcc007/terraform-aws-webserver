@@ -126,15 +126,15 @@ function install_dependencies() {
             conda clean --all -y
             python -m pip cache purge
 
-            print_highlight "Do you want to launch the web UI? [Y/N]"
-            read -p "Input> " launch
-            local launch=${launch,,}
-            if [[ "$launch" != "yes" && "$launch" != "y" && "$launch" != "true" ]]; then
-                echo "Will exit now..."
-                deactivate_conda_env
-                echo "Please run the installer again to launch the UI."
-                exit 0
-            fi
+            # print_highlight "Do you want to launch the web UI? [Y/N]"
+            # read -p "Input> " launch
+            # local launch=${launch,,}
+            # if [[ "$launch" != "yes" && "$launch" != "y" && "$launch" != "true" ]]; then
+            #     echo "Will exit now..."
+            #     deactivate_conda_env
+            #     echo "Please run the installer again to launch the UI."
+            #     exit 0
+            # fi
         fi
     fi
 }

@@ -64,9 +64,14 @@ if [ -z "$ZIP_NAME" ]; then
     ZIP_NAME="${DIR_NAME}.zip"
 fi
 
-# Create the zip file
+# Create the zip file while excluding specified paths
 echo "Zipping directory '$DIRECTORY' into '$ZIP_NAME'..."
-zip -r "$ZIP_NAME" "$DIRECTORY" > /dev/null
+zip -r "$ZIP_NAME" "$DIRECTORY" \
+    -x "*/install_dir/*" \
+        "*/ktem_app_data/*" \
+        "*/__pycache__/*" \
+        "*/libs/ktem/ktem/assets/prebuilt/*" \
+    > /dev/null
 
 # Upload the zip file to S3
 echo "Uploading '$ZIP_NAME' to S3 bucket '$S3_BUCKET'..."

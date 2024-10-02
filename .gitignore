@@ -30,3 +30,8 @@ terraform.rc
 terraform.tfvars
 ec2-user@54.161.237.86
 .terraform.lock.hcl
+data/kotaemon-app/install_dir
+data/kotaemon-app/ktem_app_data
+data/kotaemon-app/__pycache__
+.theflow/*
+data/kotaemon-app/libs/ktem/ktem/assets/prebuilt/
